@@ -18,18 +18,17 @@ theme:
 
 nav:
     - Home: index.md
-    - Tools:
-        - Windows: 
-            - WMI: wmi.md
-        - Linux:
-            - Bash: bash.md
-            - APT Package Manager: apt.md
-            - Pacman Package Manager: pacman.md
-        - Logging:
-            - Splunk: splunk.md
-        - Cloud: 
-            - AWS: aws.md
-            - Docker: docker.md
+    - Windows: 
+        - WMI: wmi.md
+    - Linux:
+        - Bash: bash.md
+        - APT Package Manager: apt.md
+        - Pacman Package Manager: pacman.md
+    - Logging:
+        - Splunk: splunk.md
+    - Cloud: 
+        - AWS: aws.md
+        - Docker: docker.md
 
 
 markdown_extensions:
