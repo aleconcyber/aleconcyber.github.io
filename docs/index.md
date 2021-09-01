@@ -1,5 +1,3 @@
-# Alec on Cyber
-
 ## Welcome
 
 Here I've started to gather my knowledge on all things Cyber. 
