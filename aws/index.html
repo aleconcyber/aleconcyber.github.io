@@ -32,7 +32,8 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Common AWS commands (CLI)", url: "#_top", children: [
+          {title: "Common AWS commands", url: "#_top", children: [
+              {title: "Login using saved credentials", url: "#login-using-saved-credentials" },
           ]},
         ];
 
@@ -80,7 +81,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="common-aws-commands-cli">Common AWS commands (CLI)<a class="headerlink" href="#common-aws-commands-cli" title="Permanent link">#</a></h1>
+    <h1 id="common-aws-commands">Common AWS commands<a class="headerlink" href="#common-aws-commands" title="Permanent link">#</a></h1>
+<h2 id="login-using-saved-credentials">Login using saved credentials<a class="headerlink" href="#login-using-saved-credentials" title="Permanent link">#</a></h2>
+<pre><code>eval $(aws ecr get-login --no-include-email | sed 's|https://||')
+</code></pre>
 
   <br>
     
