@@ -5,7 +5,7 @@
 grep * string
 ~~~
 
-## Checking which distro you are on
+## Identify the Linux distribution
 ~~~
 cat /proc/version
 ~~~
@@ -17,3 +17,31 @@ lsb_release -a
 ~~~
 sudo dmidecode --type 17
 ~~~
+
+## Set Timezone
+
+# APT Commands
+~~~
+sudo timedatectl set-timezone Australia/Sydney
+~~~
+
+## Update list of packages (check for new versions)
+~~~
+sudo apt-get update
+~~~
+
+## Upgrade installed packages
+~~~
+sudo apt upgrade
+~~~
+
+## Perform major updates
+~~~
+sudo apt full-upgrade
+~~~
+
+## Remove unneeded or unused packages (in order to save disk space)
+~~~
+sudo apt --purge autoremove
+~~~
+
