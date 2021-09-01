@@ -2,7 +2,7 @@ site_name: 'Alec on Cyber'
 site_description: 'Cyber Security Information · Tools and Techniques'
 site_author: 'Alec on Cyber'
 
-repo_url: https://github.com/aleconcyber/blog_v2
+repo_url: https://github.com/aleconcyber/aleconcyber.github.io
 
 theme:
     name: null
