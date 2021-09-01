@@ -1,4 +1,4 @@
-![Avatar](img/avatar.png)
+![Avatar](img/avatar2.png)
 
 ## Welcome
 
