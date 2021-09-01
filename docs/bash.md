@@ -5,6 +5,11 @@
 grep * string
 ~~~
 
+## Find a file containing specific text
+~~~
+grep -rnw '/path/to/somewhere/' -e 'pattern'
+~~~
+
 ## Identify the Linux distribution
 ~~~
 cat /proc/version
