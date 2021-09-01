@@ -45,5 +45,7 @@ makes weekly series
 
 # Other Gotchas
 field names are case sensitive, values are not
+
 field values from a Lookup are case sensitive
+
 boolean are  UPPER (AND OR)
