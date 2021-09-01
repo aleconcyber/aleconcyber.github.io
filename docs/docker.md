@@ -1,10 +1,14 @@
 # Useful Docker Commands
 
 ## List all running containers
-'docker ps' 
+~~~
+docker ps
+~~~
 
 ## List all running and stopped containers
-'docker ps -a'
+~~~
+docker ps -a
+~~~
 
 ## Build and tag an image ready for storage in ECR
 ~~~
