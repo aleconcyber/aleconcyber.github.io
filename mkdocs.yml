@@ -2,7 +2,7 @@ site_name: 'Windmill Dark MkDocs Theme'
 site_description: 'MkDocs theme focused on navigation and usability.'
 site_author: 'Alexandre ZANNI'
 
-repo_url: https://github.com/noraj/mkdocs-windmill-dark
+repo_url: https://github.com/aleconcyber/blog_v2
 
 theme:
     name: null
