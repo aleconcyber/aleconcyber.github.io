@@ -32,9 +32,13 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Common Docker Commands", url: "#_top", children: [
+          {title: "Useful Docker Commands", url: "#_top", children: [
               {title: "List all running containers", url: "#list-all-running-containers" },
               {title: "List all running and stopped containers", url: "#list-all-running-and-stopped-containers" },
+              {title: "Build and tag an image ready for storage in ECR", url: "#build-and-tag-an-image-ready-for-storage-in-ecr" },
+              {title: "Push image to ECR", url: "#push-image-to-ecr" },
+              {title: "Terminate and re-deploy Elastic Beanstalk application using saved config", url: "#terminate-and-re-deploy-elastic-beanstalk-application-using-saved-config" },
+              {title: "Clear all saved images and containers locally", url: "#clear-all-saved-images-and-containers-locally" },
           ]},
         ];
 
@@ -72,11 +76,29 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="common-docker-commands">Common Docker Commands<a class="headerlink" href="#common-docker-commands" title="Permanent link">#</a></h1>
+    <h1 id="useful-docker-commands">Useful Docker Commands<a class="headerlink" href="#useful-docker-commands" title="Permanent link">#</a></h1>
 <h2 id="list-all-running-containers">List all running containers<a class="headerlink" href="#list-all-running-containers" title="Permanent link">#</a></h2>
 <p>'docker ps' </p>
 <h2 id="list-all-running-and-stopped-containers">List all running and stopped containers<a class="headerlink" href="#list-all-running-and-stopped-containers" title="Permanent link">#</a></h2>
 <p>'docker ps -a'</p>
+<h2 id="build-and-tag-an-image-ready-for-storage-in-ecr">Build and tag an image ready for storage in ECR<a class="headerlink" href="#build-and-tag-an-image-ready-for-storage-in-ecr" title="Permanent link">#</a></h2>
+<pre><code>docker build -t appname:1.2.4 ./misp --tag 000000000000.dkr.ecr.ap-southeast-2.amazonaws.com/appname:1.2.4
+</code></pre>
+<p>note: replace 000000000000 with AWS account number and change region if required</p>
+<h2 id="push-image-to-ecr">Push image to ECR<a class="headerlink" href="#push-image-to-ecr" title="Permanent link">#</a></h2>
+<pre><code>docker push 000000000000.dkr.ecr.ap-southeast-2.amazonaws.com/appname:1.2.4
+</code></pre>
+<h2 id="terminate-and-re-deploy-elastic-beanstalk-application-using-saved-config">Terminate and re-deploy Elastic Beanstalk application using saved config<a class="headerlink" href="#terminate-and-re-deploy-elastic-beanstalk-application-using-saved-config" title="Permanent link">#</a></h2>
+<pre><code>eb terminate --force &amp;&amp; eb create appname -cfg appname
+</code></pre>
+<h2 id="clear-all-saved-images-and-containers-locally">Clear all saved images and containers locally<a class="headerlink" href="#clear-all-saved-images-and-containers-locally" title="Permanent link">#</a></h2>
+<pre><code>docker rm -f $(docker ps -a -q)
+docker rmi -f $(docker images -q)
+</code></pre>
+<h3 id="check-it-worked">Check it worked<a class="headerlink" href="#check-it-worked" title="Permanent link">#</a></h3>
+<pre><code>docker ps -a
+docker images
+</code></pre>
 
   <br>
     
