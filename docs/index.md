@@ -1,3 +1,5 @@
+![Avatar](img/avatar.png)
+
 ## Welcome
 
 Here I've started to gather my knowledge on all things Cyber. 
