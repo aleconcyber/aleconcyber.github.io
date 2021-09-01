@@ -34,8 +34,15 @@
         var pageToc = [
           {title: "Useful Bash commands", url: "#_top", children: [
               {title: "Find text in files easily", url: "#find-text-in-files-easily" },
-              {title: "Checking which distro you are on", url: "#checking-which-distro-you-are-on" },
+              {title: "Identify the Linux distribution", url: "#identify-the-linux-distribution" },
               {title: "ID the RAM", url: "#id-the-ram" },
+              {title: "Set Timezone", url: "#set-timezone" },
+          ]},
+          {title: "APT Commands", url: "#apt-commands", children: [
+              {title: "Update list of packages (check for new versions)", url: "#update-list-of-packages-check-for-new-versions" },
+              {title: "Upgrade installed packages", url: "#upgrade-installed-packages" },
+              {title: "Perform major updates", url: "#perform-major-updates" },
+              {title: "Remove unneeded or unused packages (in order to save disk space)", url: "#remove-unneeded-or-unused-packages-in-order-to-save-disk-space" },
           ]},
         ];
 
@@ -87,13 +94,29 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h2 id="find-text-in-files-easily">Find text in files easily<a class="headerlink" href="#find-text-in-files-easily" title="Permanent link">#</a></h2>
 <pre><code>grep * string
 </code></pre>
-<h2 id="checking-which-distro-you-are-on">Checking which distro you are on<a class="headerlink" href="#checking-which-distro-you-are-on" title="Permanent link">#</a></h2>
+<h2 id="identify-the-linux-distribution">Identify the Linux distribution<a class="headerlink" href="#identify-the-linux-distribution" title="Permanent link">#</a></h2>
 <pre><code>cat /proc/version
 </code></pre>
 <pre><code>lsb_release -a
 </code></pre>
 <h2 id="id-the-ram">ID the RAM<a class="headerlink" href="#id-the-ram" title="Permanent link">#</a></h2>
 <pre><code>sudo dmidecode --type 17
+</code></pre>
+<h2 id="set-timezone">Set Timezone<a class="headerlink" href="#set-timezone" title="Permanent link">#</a></h2>
+<h1 id="apt-commands">APT Commands<a class="headerlink" href="#apt-commands" title="Permanent link">#</a></h1>
+<pre><code>sudo timedatectl set-timezone Australia/Sydney
+</code></pre>
+<h2 id="update-list-of-packages-check-for-new-versions">Update list of packages (check for new versions)<a class="headerlink" href="#update-list-of-packages-check-for-new-versions" title="Permanent link">#</a></h2>
+<pre><code>sudo apt-get update
+</code></pre>
+<h2 id="upgrade-installed-packages">Upgrade installed packages<a class="headerlink" href="#upgrade-installed-packages" title="Permanent link">#</a></h2>
+<pre><code>sudo apt upgrade
+</code></pre>
+<h2 id="perform-major-updates">Perform major updates<a class="headerlink" href="#perform-major-updates" title="Permanent link">#</a></h2>
+<pre><code>sudo apt full-upgrade
+</code></pre>
+<h2 id="remove-unneeded-or-unused-packages-in-order-to-save-disk-space">Remove unneeded or unused packages (in order to save disk space)<a class="headerlink" href="#remove-unneeded-or-unused-packages-in-order-to-save-disk-space" title="Permanent link">#</a></h2>
+<pre><code>sudo apt --purge autoremove
 </code></pre>
 
   <br>
