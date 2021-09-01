@@ -1,6 +1,6 @@
 Blog Main Page
 
-https://aleconcyber.github.io/blog_v2/
+https://aleconcyber.github.io/
 
 Highlights:
 - Convenient navigation for larger documentation projects.
