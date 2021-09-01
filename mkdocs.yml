@@ -17,7 +17,7 @@ theme:
     article_nav_bottom: true
 
 nav:
-    - Usage: index.md
+    - Home: index.md
     - Tools:
         - Splunk: splunk.md
         - Sample Page A: sample-a.md
