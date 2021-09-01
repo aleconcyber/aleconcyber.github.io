@@ -19,12 +19,14 @@ theme:
 nav:
     - Home: index.md
     - Tools:
-        - Splunk: splunk.md
-        - Sample Page A: sample-a.md
-        - Sample Subfolder:
-            - Sample Subpage A1: sample-a1.md
+        - Windows: 
+            - PowerShell: sample-a.md
+        - Logging:
+            - Splunk: splunk.md
             - Sample Subpage A2: sample-a2.md
-        - Sample Page B: sample-b.md
+        - Cloud: 
+            - Docker: sample-b.md
+            - AWS: sample-a.md
 
 markdown_extensions:
     - toc:
