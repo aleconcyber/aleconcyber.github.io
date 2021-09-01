@@ -4,7 +4,7 @@
 
 Blog Main Page
 
-![]https://aleconcyber.github.io/blog_v2/)
+https://aleconcyber.github.io/blog_v2/
 
 Highlights:
 - Convenient navigation for larger documentation projects.
