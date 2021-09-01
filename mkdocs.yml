@@ -19,6 +19,7 @@ theme:
 nav:
     - Usage: index.md
     - Customization: customization.md
+    - Splunk: splunk.md
     - Samples:
         - Sample Page A: sample-a.md
         - Sample Subfolder:
