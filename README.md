@@ -1,7 +1,3 @@
-
-
-# Alec on Cyber
-
 Blog Main Page
 
 https://aleconcyber.github.io/blog_v2/
