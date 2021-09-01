@@ -34,6 +34,7 @@
         var pageToc = [
           {title: "Useful Bash commands", url: "#_top", children: [
               {title: "Find text in files easily", url: "#find-text-in-files-easily" },
+              {title: "Find a file containing specific text", url: "#find-a-file-containing-specific-text" },
               {title: "Identify the Linux distribution", url: "#identify-the-linux-distribution" },
               {title: "ID the RAM", url: "#id-the-ram" },
               {title: "Set Timezone", url: "#set-timezone" },
@@ -93,6 +94,9 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     <h1 id="useful-bash-commands">Useful Bash commands<a class="headerlink" href="#useful-bash-commands" title="Permanent link">#</a></h1>
 <h2 id="find-text-in-files-easily">Find text in files easily<a class="headerlink" href="#find-text-in-files-easily" title="Permanent link">#</a></h2>
 <pre><code>grep * string
+</code></pre>
+<h2 id="find-a-file-containing-specific-text">Find a file containing specific text<a class="headerlink" href="#find-a-file-containing-specific-text" title="Permanent link">#</a></h2>
+<pre><code>grep -rnw '/path/to/somewhere/' -e 'pattern'
 </code></pre>
 <h2 id="identify-the-linux-distribution">Identify the Linux distribution<a class="headerlink" href="#identify-the-linux-distribution" title="Permanent link">#</a></h2>
 <pre><code>cat /proc/version
