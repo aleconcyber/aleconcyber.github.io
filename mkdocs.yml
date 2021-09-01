@@ -23,6 +23,8 @@ nav:
             - PowerShell: powershell.md
         - Linux:
             - Bash: bash.md
+            - APT Package Manager: apt.md
+            - Pacman Package Manager: pacman.md
         - Logging:
             - Splunk: splunk.md
         - Cloud: 
