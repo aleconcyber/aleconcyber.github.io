@@ -20,7 +20,7 @@ nav:
     - Home: index.md
     - Tools:
         - Windows: 
-            - PowerShell: powershell.md
+            - WMI: wmi.md
         - Linux:
             - Bash: bash.md
             - APT Package Manager: apt.md
