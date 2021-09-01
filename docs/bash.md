@@ -24,11 +24,12 @@ sudo dmidecode --type 17
 ~~~
 
 ## Set Timezone
-
-# APT Commands
 ~~~
 sudo timedatectl set-timezone Australia/Sydney
 ~~~
+
+
+# APT Commands
 
 ## Update list of packages (check for new versions)
 ~~~
@@ -50,3 +51,20 @@ sudo apt full-upgrade
 sudo apt --purge autoremove
 ~~~
 
+
+# Pacman Commands
+
+## Update all packages
+~~~
+sudo pacman -Syu
+~~~
+
+## Update specific package
+~~~
+sudo pacman -Syu <package-name>
+~~~
+
+## Search for package
+~~~
+sudo pacman -Ss <keyword>
+~~~
