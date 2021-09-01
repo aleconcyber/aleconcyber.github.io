@@ -1,16 +1,8 @@
-# Windmill Dark theme
+# Alec on Cyber
 
 ## About
 
-Windmill Dark theme focuses on clean usable navigation for large documentation
-projects. It retains the state of the menu of pages and folders across page
-transitions, by keeping navigation to an iframe.
-
-It also implements a versatile search, featuring term highlighting, and both a
-quick dropdown and a full-page option that allows the user to come back to
-search results.
-
-Within pages, it uses the default mkdocs theme, including syntax highlighting.
+General information I've gathered from Cyber Security research
 
 ## Installation
 
