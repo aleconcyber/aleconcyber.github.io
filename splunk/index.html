@@ -33,7 +33,14 @@
         
         var pageToc = [
           {title: "Splunk", url: "#_top", children: [
-              {title: "Searching", url: "#searching" },
+          ]},
+          {title: "Commands", url: "#commands", children: [
+              {title: "Stats functions", url: "#stats-functions" },
+              {title: "Chart commands", url: "#chart-commands" },
+              {title: "Usenull &amp; Useother", url: "#usenull-useother" },
+              {title: "Clustering chart timelines", url: "#clustering-chart-timelines" },
+          ]},
+          {title: "Other Gotchas", url: "#other-gotchas", children: [
           ]},
         ];
 
@@ -82,8 +89,41 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="splunk">Splunk<a class="headerlink" href="#splunk" title="Permanent link">#</a></h1>
-<h2 id="searching">Searching<a class="headerlink" href="#searching" title="Permanent link">#</a></h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla volutpat odio, nec iaculis tortor laoreet vitae. Suspendisse dictum nibh nulla, non fringilla sapien mollis sed. Nunc vehicula facilisis tellus, ut tempor massa bibendum sed. Aenean non justo eu nulla luctus aliquam. Nullam eget arcu a urna ultrices volutpat lobortis ut sapien. Fusce vitae dapibus tellus, nec tincidunt metus. Etiam scelerisque orci ac ligula fermentum rhoncus. Ut at nisi quis tellus imperdiet porta. In semper mollis urna, nec ultricies purus bibendum non.</p>
+<h1 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">#</a></h1>
+<pre><code>dedup
+</code></pre>
+<p>Removes duplicates</p>
+<h2 id="stats-functions">Stats functions<a class="headerlink" href="#stats-functions" title="Permanent link">#</a></h2>
+<pre><code>count
+sum
+avg
+</code></pre>
+<h2 id="chart-commands">Chart commands<a class="headerlink" href="#chart-commands" title="Permanent link">#</a></h2>
+<pre><code>| chart count over rowfieldname_name by columnfieldname
+</code></pre>
+<p>over (x) (can be named)
+by (y) (numeric)</p>
+<h2 id="usenull-useother">Usenull &amp; Useother<a class="headerlink" href="#usenull-useother" title="Permanent link">#</a></h2>
+<pre><code>usenull=f 
+</code></pre>
+<p>removes the NULL values from a chart
+but better to imply blah=* to remove blanks earlier</p>
+<pre><code>useother=f  
+</code></pre>
+<p>removes the OTHER values from a chart
+limit=10 is default/max limit=0 is all </p>
+<h2 id="clustering-chart-timelines">Clustering chart timelines<a class="headerlink" href="#clustering-chart-timelines" title="Permanent link">#</a></h2>
+<pre><code>span=12h
+</code></pre>
+<p>clusters the normal 24hr to 12hr</p>
+<p>~~~
+timewrap=7d
+~~~~
+makes weekly series</p>
+<h1 id="other-gotchas">Other Gotchas<a class="headerlink" href="#other-gotchas" title="Permanent link">#</a></h1>
+<p>field names are case sensitive, values are not
+field values from a Lookup are case sensitive
+boolean are  UPPER (AND OR)</p>
 
   <br>
     
