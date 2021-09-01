@@ -20,13 +20,15 @@ nav:
     - Home: index.md
     - Tools:
         - Windows: 
-            - PowerShell: sample-a.md
+            - PowerShell: powershell.md
+        - Linux:
+            - Bash: bash.md
         - Logging:
             - Splunk: splunk.md
-            - Sample Subpage A2: sample-a2.md
         - Cloud: 
-            - Docker: sample-b.md
-            - AWS: sample-a.md
+            - AWS: aws.md
+            - Docker: docker.md
+
 
 markdown_extensions:
     - toc:
