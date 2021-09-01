@@ -1,4 +1,4 @@
-# Heading A
+# Splunk
 
 ## Sub-Heading 1
 
