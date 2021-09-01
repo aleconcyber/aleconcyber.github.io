@@ -40,7 +40,7 @@ clusters the normal 24hr to 12hr
 
 ~~~
 timewrap=7d
-~~~~
+~~~
 makes weekly series
 
 # Other Gotchas
