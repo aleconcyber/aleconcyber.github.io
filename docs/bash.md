@@ -1,7 +1,9 @@
 # Useful Bash commands
 
 ## Find text in files easily
+~~~
 'grep * string'
+~~~
 
 ## Checking which distro you are on
 'cat /proc/version'
