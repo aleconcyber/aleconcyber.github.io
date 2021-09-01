@@ -137,7 +137,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   {%- endif %}
 </div>
 
-<footer class="col-sm-12 wm-page-content align-items-center">
+<footer class="col-sm-12 wm-page-content">
 {%- block footer %}
   {%- block repo %}
     {%- if page and page.edit_url %}
@@ -152,7 +152,9 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   {%- endblock %}
 
   {%- if config.copyright %}<p>{{ config.copyright }}</p>{%- endif %}
+  <div class="text-center">
   <p>built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://noraj.github.io/mkdocs-windmill-dark/">Windmill Dark</a> theme</p>
+  </div>
 {%- endblock %}
 </footer>
 
