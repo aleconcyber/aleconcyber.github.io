@@ -18,9 +18,8 @@ theme:
 
 nav:
     - Usage: index.md
-    - Customization: customization.md
-    - Splunk: splunk.md
-    - Samples:
+    - Tools:
+        - Splunk: splunk.md
         - Sample Page A: sample-a.md
         - Sample Subfolder:
             - Sample Subpage A1: sample-a1.md
@@ -32,4 +31,4 @@ markdown_extensions:
         permalink: '#'
 
 extra:
-    version: 0.1.4
+    version: 0.1.1
