@@ -2,12 +2,18 @@
 
 ## Find text in files easily
 ~~~
-'grep * string'
+grep * string
 ~~~
 
 ## Checking which distro you are on
-'cat /proc/version'
-'lsb_release -a'
+~~~
+cat /proc/version
+~~~
+~~~
+lsb_release -a
+~~~
 
 ## ID the RAM
-'sudo dmidecode --type 17'
+~~~
+sudo dmidecode --type 17
+~~~
