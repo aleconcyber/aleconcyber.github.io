@@ -78,9 +78,11 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     <h1 id="useful-docker-commands">Useful Docker Commands<a class="headerlink" href="#useful-docker-commands" title="Permanent link">#</a></h1>
 <h2 id="list-all-running-containers">List all running containers<a class="headerlink" href="#list-all-running-containers" title="Permanent link">#</a></h2>
-<p>'docker ps' </p>
+<pre><code>docker ps
+</code></pre>
 <h2 id="list-all-running-and-stopped-containers">List all running and stopped containers<a class="headerlink" href="#list-all-running-and-stopped-containers" title="Permanent link">#</a></h2>
-<p>'docker ps -a'</p>
+<pre><code>docker ps -a
+</code></pre>
 <h2 id="build-and-tag-an-image-ready-for-storage-in-ecr">Build and tag an image ready for storage in ECR<a class="headerlink" href="#build-and-tag-an-image-ready-for-storage-in-ecr" title="Permanent link">#</a></h2>
 <pre><code>docker build -t appname:1.2.4 ./misp --tag 000000000000.dkr.ecr.ap-southeast-2.amazonaws.com/appname:1.2.4
 </code></pre>
