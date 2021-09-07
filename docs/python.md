@@ -1,4 +1,4 @@
-#Python
+# Python
 
 ## Variables
 ~~~
@@ -36,3 +36,24 @@ Modulo: gives the remainder of 5 divided by 3 (2)
 4 ** 3
 ~~~
 Four to the power of 3 (64)
+
+## Indexing and slicing
+~~~
+indexname = ['a', 'b', 'c', 'd']
+~~~
+Build and populate index
+ 
+~~~
+print(indexname[1:2])
+~~~
+Output second and third index values ( b, c )
+
+~~~
+print(indexname[2:])
+~~~
+Output third to final index values ( c, d )
+
+~~~
+print(indexname[:1])
+~~~
+Output first to second values ( a, b)
