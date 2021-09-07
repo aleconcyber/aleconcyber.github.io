@@ -9,7 +9,7 @@ Declare and set value
 ~~~
 type(variablename)
 ~~~
-Output type
+Output type (string, float, list, integer, boolean) 
 
 ## Write output
 ~~~
@@ -57,3 +57,6 @@ Output third to final index values ( c, d )
 print(indexname[:1])
 ~~~
 Output first to second values ( a, b)
+
+###Other info
+Lists can contain other lists
