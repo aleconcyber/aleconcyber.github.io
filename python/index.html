@@ -33,6 +33,10 @@
         
         var pageToc = [
           {title: "Python", url: "#_top", children: [
+              {title: "Variables", url: "#variables" },
+              {title: "Write output", url: "#write-output" },
+              {title: "Mathematical operations", url: "#mathematical-operations" },
+              {title: "Indexing and slicing", url: "#indexing-and-slicing" },
           ]},
         ];
 
@@ -52,11 +56,83 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../docker/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../docker/" class="btn btn-xs btn-link">
+        Docker
+      </a>
+    </div>
+    
+  </div>
+
+    
 
     <h1 id="python">Python<a class="headerlink" href="#python" title="Permanent link">#</a></h1>
+<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">#</a></h2>
+<pre><code>variablename = 10
+</code></pre>
+<p>Declare and set value</p>
+<pre><code>type(variablename)
+</code></pre>
+<p>Output type</p>
+<h2 id="write-output">Write output<a class="headerlink" href="#write-output" title="Permanent link">#</a></h2>
+<pre><code>print &quot;string&quot;
+print (variablename)
+print &quot;string&quot; + str(variablename) + &quot;another string&quot;
+</code></pre>
+<h2 id="mathematical-operations">Mathematical operations<a class="headerlink" href="#mathematical-operations" title="Permanent link">#</a></h2>
+<pre><code>1 + 2
+1 / 2
+1 * 2
+1 - 2
+</code></pre>
+<p>Standard algebra</p>
+<pre><code>5 % 3
+</code></pre>
+<p>Modulo: gives the remainder of 5 divided by 3 (2)</p>
+<pre><code>4 ** 3
+</code></pre>
+<p>Four to the power of 3 (64)</p>
+<h2 id="indexing-and-slicing">Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permanent link">#</a></h2>
+<pre><code>indexname = ['a', 'b', 'c', 'd']
+</code></pre>
+<p>Build and populate index</p>
+<pre><code>print(indexname[1:2])
+</code></pre>
+<p>Output second and third index values ( b, c )</p>
+<pre><code>print(indexname[2:])
+</code></pre>
+<p>Output third to final index values ( c, d )</p>
+<pre><code>print(indexname[:1])
+</code></pre>
+<p>Output first to second values ( a, b)</p>
 
   <br>
     
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../docker/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../docker/" class="btn btn-xs btn-link">
+        Docker
+      </a>
+    </div>
+    
+  </div>
 
     <br>
 </div>
