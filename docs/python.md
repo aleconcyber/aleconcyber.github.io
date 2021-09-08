@@ -41,7 +41,7 @@ Four to the power of 3 (64)
 ~~~
 indexname = ['a', 'b', 'c', 'd']
 ~~~
-Build and populate index
+Build and populate a list
  
 ~~~
 print(indexname[1:2])
@@ -59,4 +59,4 @@ print(indexname[:1])
 Output first to second values ( a, b)
 
 ###Other info
-Lists can contain other lists
+Lists can contain other lists and can be of mixed object types
