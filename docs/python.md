@@ -44,9 +44,9 @@ indexname = ['a', 'b', 'c', 'd']
 Build and populate a list
  
 ~~~
-print(indexname[1:2])
+print(indexname[1:3])
 ~~~
-Output second and third index values ( b, c )
+Output second and third index value ( b, c )
 
 ~~~
 print(indexname[2:])
@@ -56,7 +56,12 @@ Output third to final index values ( c, d )
 ~~~
 print(indexname[:1])
 ~~~
-Output first to second values ( a, b)
+Output first values ( a )
+
+~~~
+listname[start:end]
+~~~
+Start is selected but end is not (only the entry prior)
 
 ###Other info
 Lists can contain other lists and can be of mixed object types
