@@ -42,6 +42,11 @@ Four to the power of 3 (64)
 indexname = ['a', 'b', 'c', 'd']
 ~~~
 Build and populate a list
+
+~~~
+del(indexname[1])
+~~~
+Remove the second list object (b)
  
 ~~~
 print(indexname[1:3])
@@ -65,3 +70,9 @@ Start is selected but end is not (only the entry prior)
 
 ###Other info
 Lists can contain other lists and can be of mixed object types
+
+## Joining multiple commands together
+~~~
+Command1; Command2
+~~~
+The semicolon acts as a new line separator
