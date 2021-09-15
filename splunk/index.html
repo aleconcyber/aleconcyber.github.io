@@ -104,6 +104,13 @@ avg
 </code></pre>
 <p>over (x) (can be named)
 by (y) (numeric)</p>
+<h3 id="timechart">Timechart<a class="headerlink" href="#timechart" title="Permanent link">#</a></h3>
+<pre><code>| timechart span=1d count as columnfieldname
+</code></pre>
+<h3 id="add-trends">Add trends<a class="headerlink" href="#add-trends" title="Permanent link">#</a></h3>
+<pre><code>|trendline sma2(failures) as trend
+</code></pre>
+<p>Simple Moving Average</p>
 <h2 id="usenull-useother">Usenull &amp; Useother<a class="headerlink" href="#usenull-useother" title="Permanent link">#</a></h2>
 <pre><code>usenull=f 
 </code></pre>
