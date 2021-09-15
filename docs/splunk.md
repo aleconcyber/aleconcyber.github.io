@@ -43,6 +43,11 @@ timewrap=7d
 ~~~
 makes weekly series
 
+## Adding IP location information
+~~~
+| iplocation src_ip
+~~
+
 # Other Gotchas
 field names are case sensitive, values are not
 
