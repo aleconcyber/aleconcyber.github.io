@@ -20,6 +20,17 @@ avg
 over (x) (can be named)
 by (y) (numeric)
 
+### Timechart
+~~~
+| timechart span=1d count as columnfieldname
+~~~
+
+### Add trends
+~~~
+|trendline sma2(failures) as trend
+~~~
+Simple Moving Average
+
 ## Usenull & Useother
 ~~~
 usenull=f 
