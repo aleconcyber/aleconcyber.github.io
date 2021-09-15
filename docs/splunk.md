@@ -46,7 +46,8 @@ makes weekly series
 ## Adding IP location information
 ~~~
 | iplocation src_ip
-~~
+~~~
+Where src_ip is the field containing IP address
 
 # Other Gotchas
 field names are case sensitive, values are not
