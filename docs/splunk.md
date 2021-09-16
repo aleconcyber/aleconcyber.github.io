@@ -20,6 +20,11 @@ avg
 over (x) (can be named)
 by (y) (numeric)
 
+~~~
+addtotals
+~~~
+adds totals and creates a new field with totals
+
 ### Timechart
 ~~~
 | timechart span=1d count as columnfieldname
