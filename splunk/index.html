@@ -36,6 +36,10 @@
           ]},
           {title: "Commands", url: "#commands", children: [
               {title: "Stats functions", url: "#stats-functions" },
+              {title: "Eval commands", url: "#eval-commands" },
+              {title: "Search commmand", url: "#search-commmand" },
+              {title: "Where command", url: "#where-command" },
+              {title: "Fieldformat (Display-level alternative to eval)", url: "#fieldformat-display-level-alternative-to-eval" },
               {title: "Chart commands", url: "#chart-commands" },
               {title: "Usenull &amp; Useother", url: "#usenull-useother" },
               {title: "Clustering chart timelines", url: "#clustering-chart-timelines" },
@@ -103,6 +107,64 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 sum
 avg
 </code></pre>
+<h2 id="eval-commands">Eval commands<a class="headerlink" href="#eval-commands" title="Permanent link">#</a></h2>
+<pre><code>| eval MegaBytes = round(Bytes/1024/1024,2)
+</code></pre>
+<p>create a new field called MegaBytes which turned bytes into the values</p>
+<pre><code>eval discount = round(((sale_price - list_price) / list_price)*100)
+</code></pre>
+<p>another example of math done on an field value</p>
+<h3 id="tostring">ToString<a class="headerlink" href="#tostring" title="Permanent link">#</a></h3>
+<pre><code>eval numerField = &quot;$&quot; + tostring(price_value,&quot;commas&quot;)
+</code></pre>
+<p>make numbers into dollar values</p>
+<pre><code>eval if (condition, true, false)
+</code></pre>
+<p>A/B test in the condition, processing down in 2nd and 3rd arguments.</p>
+<pre><code>eval fieldName=case(status=200, &quot;OK&quot;, status=404, &quot;Not Found&quot;)
+</code></pre>
+<p>if an event doesn't fit any cases, no value will return. To fix this:</p>
+<pre><code>eval fieldName=case(status=200, &quot;OK&quot;, status=404, &quot;Not Found&quot;, true(), &quot;Something Else&quot;)
+</code></pre>
+<p>Can also add ranges with AND</p>
+<pre><code>eval fieldName=case(status=&gt;=199 AND status&lt;=201, &quot;OK&quot;, status=404, &quot;Not Found&quot;, true(), &quot;Something Else&quot;)
+</code></pre>
+<p>each case can have AND statements and there can be as many cases and desired.</p>
+<p>eval can be used inside a transform eg. stats</p>
+<pre><code>| stats count(eval(status&lt;300)) as &quot;Success&quot;
+count(eval(status&gt;=400 AND status&lt;500)) as &quot;Client Error&quot;,
+count(eval(status&gt;500)) as &quot;Server Error&quot;
+</code></pre>
+<p>Note the as is needed during the transform as well as the double-quotes</p>
+<h2 id="search-commmand">Search commmand<a class="headerlink" href="#search-commmand" title="Permanent link">#</a></h2>
+<pre><code>| search Count &gt; 1
+</code></pre>
+<p>locate all results with Count value higher than 1</p>
+<h2 id="where-command">Where command<a class="headerlink" href="#where-command" title="Permanent link">#</a></h2>
+<pre><code>| where blah &gt; blah
+| where blah!=&quot;IgnoreThis&quot;
+</code></pre>
+<p>filter results</p>
+<pre><code>| where isnotnull(INeedThisValue)
+</code></pre>
+<p>ignore missing values</p>
+<pre><code>| where isnull(IDontNeedThisValue)
+</code></pre>
+<p>only missing values</p>
+<pre><code>| fillnull value=&quot;100&quot;
+</code></pre>
+<p>fills nulls with 100, defaults to 0 without value field</p>
+<p>Wildcards</p>
+<pre><code>| where blah like &quot;Hell_&quot;
+</code></pre>
+<p>Matches one ( Hello, Hellp )</p>
+<pre><code>| where blah like &quot;Hell%&quot;
+</code></pre>
+<p>Matches many ( Hello, Hellotopia )</p>
+<h2 id="fieldformat-display-level-alternative-to-eval">Fieldformat (Display-level alternative to eval)<a class="headerlink" href="#fieldformat-display-level-alternative-to-eval" title="Permanent link">#</a></h2>
+<pre><code>fieldformat numerField = &quot;$&quot; + tostring(price_value,&quot;commas&quot;)
+</code></pre>
+<p>Does not modify the underlying data, just modifies the displayed output (so sorting would still work)</p>
 <h2 id="chart-commands">Chart commands<a class="headerlink" href="#chart-commands" title="Permanent link">#</a></h2>
 <pre><code>| chart count over rowfieldname_name by columnfieldname
 </code></pre>
