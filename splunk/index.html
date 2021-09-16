@@ -45,6 +45,7 @@
               {title: "Field Extraction", url: "#field-extraction" },
               {title: "Knowledge Objects", url: "#knowledge-objects" },
               {title: "Aliases and Calc Fields", url: "#aliases-and-calc-fields" },
+              {title: "Macros", url: "#macros" },
               {title: "Chart commands", url: "#chart-commands" },
               {title: "Usenull and Useother", url: "#usenull-and-useother" },
               {title: "Clustering chart timelines", url: "#clustering-chart-timelines" },
@@ -209,6 +210,11 @@ Apply to sourcetype, source or host
 Existing on Left, New name on the right (new fieldname).</p>
 <p>Calculated Fields
 Same process as Aliases but inlcude and eval expressions</p>
+<h2 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">#</a></h2>
+<p>Settings &gt; Advances Search &gt; Search Macros
+definition is the eval string</p>
+<pre><code>| `macroname`
+</code></pre>
 <h2 id="chart-commands">Chart commands<a class="headerlink" href="#chart-commands" title="Permanent link">#</a></h2>
 <pre><code>| chart count over rowfieldname_name by columnfieldname
 </code></pre>
