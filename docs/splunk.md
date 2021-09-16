@@ -112,6 +112,24 @@ fieldformat numerField = "$" + tostring(price_value,"commas")
 ~~~
 Does not modify the underlying data, just modifies the displayed output (so sorting would still work)
 
+## Transaction command
+~~~
+| transaction src_ip
+~~~
+grouping items by a common factor
+this creates new fields Durtion and Event Count
+
+~~~
+| transaction src_ip dest_ip session_id
+~~~
+multiple fields used to form correlations, note that transaction has a max of 1000 events for one transaction
+
+~~~
+| transaction src_ip maxspan=100 maxpause=10 startswith="login" endswith="logout"
+~~~
+extended transaction command with extra specificity
+startswith and endswith can search for terms, field values or evalutations
+
 ## Chart commands
 ~~~
 | chart count over rowfieldname_name by columnfieldname
@@ -164,6 +182,12 @@ makes weekly series
 ~~~
 Where src_ip is the field containing IP address
 
+# Visualisations
+gauge with color ranges
+~~~
+| gauge FieldName 10 20 40 60 80 100
+~~~
+
 # Mapping
 Choropleth maps require a geo-map eg.
 ~~~
@@ -175,12 +199,6 @@ Cluster Maps can use IP Geolocation
 ~~~
 | iplocation ipFieldName
 | geostats count by ipFieldName
-~~~
-
-# Visualisations
-gauge with color ranges
-~~~
-| gauge FieldName 10 20 40 60 80 100
 ~~~
 
 # Other Gotchas
