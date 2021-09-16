@@ -41,6 +41,10 @@
               {title: "Clustering chart timelines", url: "#clustering-chart-timelines" },
               {title: "Adding IP location information", url: "#adding-ip-location-information" },
           ]},
+          {title: "Mapping", url: "#mapping", children: [
+          ]},
+          {title: "Visualisations", url: "#visualisations", children: [
+          ]},
           {title: "Other Gotchas", url: "#other-gotchas", children: [
           ]},
         ];
@@ -131,6 +135,19 @@ limit=10 is default/max limit=0 is all </p>
 <pre><code>| iplocation src_ip
 </code></pre>
 <p>Where src_ip is the field containing IP address</p>
+<h1 id="mapping">Mapping<a class="headerlink" href="#mapping" title="Permanent link">#</a></h1>
+<p>Choropleth maps require a geo-map eg.</p>
+<pre><code>| chart count by StateFieldName
+| geom geo_us_states featureIdField=StateFieldName
+</code></pre>
+<p>Cluster Maps can use IP Geolocation</p>
+<pre><code>| iplocation ipFieldName
+| geostats count by ipFieldName
+</code></pre>
+<h1 id="visualisations">Visualisations<a class="headerlink" href="#visualisations" title="Permanent link">#</a></h1>
+<p>gauge with color ranges</p>
+<pre><code>| gauge FieldName 10 20 40 60 80 100
+</code></pre>
 <h1 id="other-gotchas">Other Gotchas<a class="headerlink" href="#other-gotchas" title="Permanent link">#</a></h1>
 <p>field names are case sensitive, values are not</p>
 <p>field values from a Lookup are case sensitive</p>
