@@ -40,14 +40,15 @@
               {title: "Search commmand", url: "#search-commmand" },
               {title: "Where command", url: "#where-command" },
               {title: "Fieldformat (Display-level alternative to eval)", url: "#fieldformat-display-level-alternative-to-eval" },
+              {title: "Transaction command", url: "#transaction-command" },
               {title: "Chart commands", url: "#chart-commands" },
               {title: "Usenull &amp; Useother", url: "#usenull-useother" },
               {title: "Clustering chart timelines", url: "#clustering-chart-timelines" },
               {title: "Adding IP location information", url: "#adding-ip-location-information" },
           ]},
-          {title: "Mapping", url: "#mapping", children: [
-          ]},
           {title: "Visualisations", url: "#visualisations", children: [
+          ]},
+          {title: "Mapping", url: "#mapping", children: [
           ]},
           {title: "Other Gotchas", url: "#other-gotchas", children: [
           ]},
@@ -171,6 +172,18 @@ count(eval(status&gt;500)) as &quot;Server Error&quot;
 <pre><code>fieldformat numerField = &quot;$&quot; + tostring(price_value,&quot;commas&quot;)
 </code></pre>
 <p>Does not modify the underlying data, just modifies the displayed output (so sorting would still work)</p>
+<h2 id="transaction-command">Transaction command<a class="headerlink" href="#transaction-command" title="Permanent link">#</a></h2>
+<pre><code>| transaction src_ip
+</code></pre>
+<p>grouping items by a common factor
+this creates new fields Durtion and Event Count</p>
+<pre><code>| transaction src_ip dest_ip session_id
+</code></pre>
+<p>multiple fields used to form correlations, note that transaction has a max of 1000 events for one transaction</p>
+<pre><code>| transaction src_ip maxspan=100 maxpause=10 startswith=&quot;login&quot; endswith=&quot;logout&quot;
+</code></pre>
+<p>extended transaction command with extra specificity
+startswith and endswith can search for terms, field values or evalutations</p>
 <h2 id="chart-commands">Chart commands<a class="headerlink" href="#chart-commands" title="Permanent link">#</a></h2>
 <pre><code>| chart count over rowfieldname_name by columnfieldname
 </code></pre>
@@ -206,6 +219,10 @@ limit=10 is default/max limit=0 is all </p>
 <pre><code>| iplocation src_ip
 </code></pre>
 <p>Where src_ip is the field containing IP address</p>
+<h1 id="visualisations">Visualisations<a class="headerlink" href="#visualisations" title="Permanent link">#</a></h1>
+<p>gauge with color ranges</p>
+<pre><code>| gauge FieldName 10 20 40 60 80 100
+</code></pre>
 <h1 id="mapping">Mapping<a class="headerlink" href="#mapping" title="Permanent link">#</a></h1>
 <p>Choropleth maps require a geo-map eg.</p>
 <pre><code>| chart count by StateFieldName
@@ -214,10 +231,6 @@ limit=10 is default/max limit=0 is all </p>
 <p>Cluster Maps can use IP Geolocation</p>
 <pre><code>| iplocation ipFieldName
 | geostats count by ipFieldName
-</code></pre>
-<h1 id="visualisations">Visualisations<a class="headerlink" href="#visualisations" title="Permanent link">#</a></h1>
-<p>gauge with color ranges</p>
-<pre><code>| gauge FieldName 10 20 40 60 80 100
 </code></pre>
 <h1 id="other-gotchas">Other Gotchas<a class="headerlink" href="#other-gotchas" title="Permanent link">#</a></h1>
 <p>field names are case sensitive, values are not</p>
