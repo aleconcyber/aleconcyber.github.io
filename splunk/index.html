@@ -40,7 +40,10 @@
               {title: "Search commmand", url: "#search-commmand" },
               {title: "Where command", url: "#where-command" },
               {title: "Fieldformat (Display-level alternative to eval)", url: "#fieldformat-display-level-alternative-to-eval" },
+              {title: "Stats command", url: "#stats-command" },
               {title: "Transaction command", url: "#transaction-command" },
+              {title: "Field Extraction", url: "#field-extraction" },
+              {title: "Knowledge Objects", url: "#knowledge-objects" },
               {title: "Chart commands", url: "#chart-commands" },
               {title: "Usenull &amp; Useother", url: "#usenull-useother" },
               {title: "Clustering chart timelines", url: "#clustering-chart-timelines" },
@@ -172,6 +175,8 @@ count(eval(status&gt;500)) as &quot;Server Error&quot;
 <pre><code>fieldformat numerField = &quot;$&quot; + tostring(price_value,&quot;commas&quot;)
 </code></pre>
 <p>Does not modify the underlying data, just modifies the displayed output (so sorting would still work)</p>
+<h2 id="stats-command">Stats command<a class="headerlink" href="#stats-command" title="Permanent link">#</a></h2>
+<p>Use stats to see results of a calculation, or group events on a field value. Use transaction to see events correlated together, or grouped by start and end values.</p>
 <h2 id="transaction-command">Transaction command<a class="headerlink" href="#transaction-command" title="Permanent link">#</a></h2>
 <pre><code>| transaction src_ip
 </code></pre>
@@ -184,6 +189,17 @@ this creates new fields Durtion and Event Count</p>
 </code></pre>
 <p>extended transaction command with extra specificity
 startswith and endswith can search for terms, field values or evalutations</p>
+<h2 id="field-extraction">Field Extraction<a class="headerlink" href="#field-extraction" title="Permanent link">#</a></h2>
+<p>Works with RegEx or Delimiters
+Creates Knowledge Objects</p>
+<h2 id="knowledge-objects">Knowledge Objects<a class="headerlink" href="#knowledge-objects" title="Permanent link">#</a></h2>
+<p>Data Interpretation
+Classification
+Enrichment
+Normalization
+Search Time Mapping</p>
+<p>Typical naming convention
+Group-Type-Platform-Category-Time-Description</p>
 <h2 id="chart-commands">Chart commands<a class="headerlink" href="#chart-commands" title="Permanent link">#</a></h2>
 <pre><code>| chart count over rowfieldname_name by columnfieldname
 </code></pre>
