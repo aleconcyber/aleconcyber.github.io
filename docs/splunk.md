@@ -149,6 +149,17 @@ Search Time Mapping
 Typical naming convention
 Group-Type-Platform-Category-Time-Description
 
+## Aliases and Calc Fields
+
+Aliases:
+Settings > Fields > Aliases
+Set Name (doesnt' matter)
+Apply to sourcetype, source or host
+Existing on Left, New name on the right (new fieldname).
+
+Calculated Fields
+Same process as Aliases but inlcude and eval expressions
+
 ## Chart commands
 ~~~
 | chart count over rowfieldname_name by columnfieldname
@@ -172,7 +183,7 @@ adds totals and creates a new field with totals
 ~~~
 Simple Moving Average
 
-## Usenull & Useother
+## Usenull and Useother
 ~~~
 usenull=f 
 ~~~
