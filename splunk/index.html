@@ -39,6 +39,15 @@
               {title: "Eval commands", url: "#eval-commands" },
               {title: "Search commmand", url: "#search-commmand" },
               {title: "Where command", url: "#where-command" },
+              {title: "Fieldformat (Display-level alternative to eval)", url: "#fieldformat-display-level-alternative-to-eval" },
+              {title: "Chart commands", url: "#chart-commands" },
+              {title: "Usenull &amp; Useother", url: "#usenull-useother" },
+              {title: "Clustering chart timelines", url: "#clustering-chart-timelines" },
+              {title: "Adding IP location information", url: "#adding-ip-location-information" },
+          ]},
+          {title: "Mapping", url: "#mapping", children: [
+          ]},
+          {title: "Visualisations", url: "#visualisations", children: [
           ]},
           {title: "Other Gotchas", url: "#other-gotchas", children: [
           ]},
@@ -143,89 +152,73 @@ count(eval(status&gt;500)) as &quot;Server Error&quot;
 </code></pre>
 <p>only missing values</p>
 <pre><code>| fields - DropThis
-~~~~
-ignore fields 
-
 </code></pre>
-<p>| sort -Name</p>
-<pre><code>Sort (decending) by Name
-
+<p>ignore fields </p>
+<pre><code>| sort -Name
 </code></pre>
-<p>| fillnull value="100"</p>
-<pre><code>fills nulls with 100, defaults to 0 without value field
-
-Wildcards
+<p>Sort (decending) by Name</p>
+<pre><code>| fillnull value=&quot;100&quot;
 </code></pre>
-<p>| where blah like "Hell_"</p>
-<pre><code>Matches one ( Hello, Hellp )
+<p>fills nulls with 100, defaults to 0 without value field</p>
+<p>Wildcards</p>
+<pre><code>| where blah like &quot;Hell_&quot;
 </code></pre>
-<p>| where blah like "Hell%"</p>
-<pre><code>Matches many ( Hello, Hellotopia )
-
-## Fieldformat (Display-level alternative to eval)
+<p>Matches one ( Hello, Hellp )</p>
+<pre><code>| where blah like &quot;Hell%&quot;
 </code></pre>
-<p>fieldformat numerField = "$" + tostring(price_value,"commas")</p>
-<pre><code>Does not modify the underlying data, just modifies the displayed output (so sorting would still work)
-
-## Chart commands
+<p>Matches many ( Hello, Hellotopia )</p>
+<h2 id="fieldformat-display-level-alternative-to-eval">Fieldformat (Display-level alternative to eval)<a class="headerlink" href="#fieldformat-display-level-alternative-to-eval" title="Permanent link">#</a></h2>
+<pre><code>fieldformat numerField = &quot;$&quot; + tostring(price_value,&quot;commas&quot;)
 </code></pre>
-<p>| chart count over rowfieldname_name by columnfieldname</p>
-<pre><code>over (x) (can be named)
-by (y) (numeric)
-
+<p>Does not modify the underlying data, just modifies the displayed output (so sorting would still work)</p>
+<h2 id="chart-commands">Chart commands<a class="headerlink" href="#chart-commands" title="Permanent link">#</a></h2>
+<pre><code>| chart count over rowfieldname_name by columnfieldname
 </code></pre>
-<p>addtotals</p>
-<pre><code>adds totals and creates a new field with totals
-
-### Timechart
+<p>over (x) (can be named)
+by (y) (numeric)</p>
+<pre><code>addtotals
 </code></pre>
-<p>| timechart span=1d count as columnfieldname</p>
-<pre><code>
-### Add trends
+<p>adds totals and creates a new field with totals</p>
+<h3 id="timechart">Timechart<a class="headerlink" href="#timechart" title="Permanent link">#</a></h3>
+<pre><code>| timechart span=1d count as columnfieldname
 </code></pre>
-<p>|trendline sma2(failures) as trend</p>
-<pre><code>Simple Moving Average
-
-## Usenull &amp; Useother
+<h3 id="add-trends">Add trends<a class="headerlink" href="#add-trends" title="Permanent link">#</a></h3>
+<pre><code>|trendline sma2(failures) as trend
 </code></pre>
-<p>usenull=f </p>
-<pre><code>removes the NULL values from a chart
-but better to imply blah=* to remove blanks earlier
+<p>Simple Moving Average</p>
+<h2 id="usenull-useother">Usenull &amp; Useother<a class="headerlink" href="#usenull-useother" title="Permanent link">#</a></h2>
+<pre><code>usenull=f 
 </code></pre>
-<p>useother=f  </p>
-<pre><code>removes the OTHER values from a chart
-limit=10 is default/max limit=0 is all 
-
-## Clustering chart timelines
+<p>removes the NULL values from a chart
+but better to imply blah=* to remove blanks earlier</p>
+<pre><code>useother=f  
 </code></pre>
-<p>span=12h</p>
-<pre><code>clusters the normal 24hr to 12hr
-
+<p>removes the OTHER values from a chart
+limit=10 is default/max limit=0 is all </p>
+<h2 id="clustering-chart-timelines">Clustering chart timelines<a class="headerlink" href="#clustering-chart-timelines" title="Permanent link">#</a></h2>
+<pre><code>span=12h
 </code></pre>
-<p>timewrap=7d</p>
-<pre><code>makes weekly series
-
-## Adding IP location information
+<p>clusters the normal 24hr to 12hr</p>
+<pre><code>timewrap=7d
 </code></pre>
-<p>| iplocation src_ip</p>
-<pre><code>Where src_ip is the field containing IP address
-
-# Mapping
-Choropleth maps require a geo-map eg.
+<p>makes weekly series</p>
+<h2 id="adding-ip-location-information">Adding IP location information<a class="headerlink" href="#adding-ip-location-information" title="Permanent link">#</a></h2>
+<pre><code>| iplocation src_ip
 </code></pre>
-<p>| chart count by StateFieldName
-| geom geo_us_states featureIdField=StateFieldName</p>
-<pre><code>
-Cluster Maps can use IP Geolocation
+<p>Where src_ip is the field containing IP address</p>
+<h1 id="mapping">Mapping<a class="headerlink" href="#mapping" title="Permanent link">#</a></h1>
+<p>Choropleth maps require a geo-map eg.</p>
+<pre><code>| chart count by StateFieldName
+| geom geo_us_states featureIdField=StateFieldName
 </code></pre>
-<p>| iplocation ipFieldName
-| geostats count by ipFieldName</p>
-<pre><code>
-# Visualisations
-gauge with color ranges
+<p>Cluster Maps can use IP Geolocation</p>
+<pre><code>| iplocation ipFieldName
+| geostats count by ipFieldName
 </code></pre>
-<p>| gauge FieldName 10 20 40 60 80 100
-~~~</p>
+<h1 id="visualisations">Visualisations<a class="headerlink" href="#visualisations" title="Permanent link">#</a></h1>
+<p>gauge with color ranges</p>
+<pre><code>| gauge FieldName 10 20 40 60 80 100
+</code></pre>
 <h1 id="other-gotchas">Other Gotchas<a class="headerlink" href="#other-gotchas" title="Permanent link">#</a></h1>
 <p>field names are case sensitive, values are not</p>
 <p>field values from a Lookup are case sensitive</p>
