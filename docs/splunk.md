@@ -172,6 +172,8 @@ If defining and argument, surround with $ ( $argumentname$ ) in the eval string
 | `macroname("argument1","argument2")
 ~~~
 
+Macroname should include name(2) if two arguments are needed
+
 Validation Expression:
 $arg1$="one" OR $arg1$="two"
 
