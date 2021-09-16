@@ -60,6 +60,25 @@ makes weekly series
 ~~~
 Where src_ip is the field containing IP address
 
+# Mapping
+Choropleth maps require a geo-map eg.
+~~~
+| chart count by StateFieldName
+| geom geo_us_states featureIdField=StateFieldName
+~~~
+
+Cluster Maps can use IP Geolocation
+~~~
+| iplocation ipFieldName
+| geostats count by ipFieldName
+~~~
+
+# Visualisations
+gauge with color ranges
+~~~
+| gauge FieldName 10 20 40 60 80 100
+~~~
+
 # Other Gotchas
 field names are case sensitive, values are not
 
