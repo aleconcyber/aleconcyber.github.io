@@ -44,8 +44,9 @@
               {title: "Transaction command", url: "#transaction-command" },
               {title: "Field Extraction", url: "#field-extraction" },
               {title: "Knowledge Objects", url: "#knowledge-objects" },
+              {title: "Aliases and Calc Fields", url: "#aliases-and-calc-fields" },
               {title: "Chart commands", url: "#chart-commands" },
-              {title: "Usenull &amp; Useother", url: "#usenull-useother" },
+              {title: "Usenull and Useother", url: "#usenull-and-useother" },
               {title: "Clustering chart timelines", url: "#clustering-chart-timelines" },
               {title: "Adding IP location information", url: "#adding-ip-location-information" },
           ]},
@@ -200,6 +201,14 @@ Normalization
 Search Time Mapping</p>
 <p>Typical naming convention
 Group-Type-Platform-Category-Time-Description</p>
+<h2 id="aliases-and-calc-fields">Aliases and Calc Fields<a class="headerlink" href="#aliases-and-calc-fields" title="Permanent link">#</a></h2>
+<p>Aliases:
+Settings &gt; Fields &gt; Aliases
+Set Name (doesnt' matter)
+Apply to sourcetype, source or host
+Existing on Left, New name on the right (new fieldname).</p>
+<p>Calculated Fields
+Same process as Aliases but inlcude and eval expressions</p>
 <h2 id="chart-commands">Chart commands<a class="headerlink" href="#chart-commands" title="Permanent link">#</a></h2>
 <pre><code>| chart count over rowfieldname_name by columnfieldname
 </code></pre>
@@ -215,7 +224,7 @@ by (y) (numeric)</p>
 <pre><code>|trendline sma2(failures) as trend
 </code></pre>
 <p>Simple Moving Average</p>
-<h2 id="usenull-useother">Usenull &amp; Useother<a class="headerlink" href="#usenull-useother" title="Permanent link">#</a></h2>
+<h2 id="usenull-and-useother">Usenull and Useother<a class="headerlink" href="#usenull-and-useother" title="Permanent link">#</a></h2>
 <pre><code>usenull=f 
 </code></pre>
 <p>removes the NULL values from a chart
