@@ -215,6 +215,13 @@ Same process as Aliases but inlcude and eval expressions</p>
 definition is the eval string</p>
 <pre><code>| `macroname`
 </code></pre>
+<p>If defining and argument, surround with $ ( $argumentname$ ) in the eval string</p>
+<pre><code>| `macroname(&quot;argument1&quot;,&quot;argument2&quot;)
+</code></pre>
+<p>Validation Expression:
+$arg1$="one" OR $arg1$="two"</p>
+<p>Validation Message:
+Use one or two</p>
 <h2 id="chart-commands">Chart commands<a class="headerlink" href="#chart-commands" title="Permanent link">#</a></h2>
 <pre><code>| chart count over rowfieldname_name by columnfieldname
 </code></pre>
