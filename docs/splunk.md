@@ -160,6 +160,13 @@ Existing on Left, New name on the right (new fieldname).
 Calculated Fields
 Same process as Aliases but inlcude and eval expressions
 
+## Macros
+Settings > Advances Search > Search Macros
+definition is the eval string
+~~~
+| `macroname`
+~~~
+
 ## Chart commands
 ~~~
 | chart count over rowfieldname_name by columnfieldname
