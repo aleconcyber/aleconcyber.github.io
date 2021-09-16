@@ -166,6 +166,17 @@ definition is the eval string
 ~~~
 | `macroname`
 ~~~
+If defining and argument, surround with $ ( $argumentname$ ) in the eval string
+
+~~~
+| `macroname("argument1","argument2")
+~~~
+
+Validation Expression:
+$arg1$="one" OR $arg1$="two"
+
+Validation Message:
+Use one or two
 
 ## Chart commands
 ~~~
