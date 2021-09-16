@@ -82,6 +82,16 @@ ignore missing values
 only missing values
 
 ~~~
+| fields - DropThis
+~~~~
+ignore fields 
+
+~~~
+| sort -Name
+~~~
+Sort (decending) by Name
+
+~~~
 | fillnull value="100"
 ~~~
 fills nulls with 100, defaults to 0 without value field
