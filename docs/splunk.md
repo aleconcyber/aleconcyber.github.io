@@ -13,6 +13,95 @@ sum
 avg
 ~~~
 
+## Eval commands
+~~~
+| eval MegaBytes = round(Bytes/1024/1024,2)
+~~~
+create a new field called MegaBytes which turned bytes into the values
+
+~~~
+eval discount = round(((sale_price - list_price) / list_price)*100)
+~~~
+another example of math done on an field value
+
+### ToString
+~~~
+eval numerField = "$" + tostring(price_value,"commas")
+~~~
+make numbers into dollar values
+
+~~~
+eval if (condition, true, false)
+~~~
+A/B test in the condition, processing down in 2nd and 3rd arguments.
+
+~~~
+eval fieldName=case(status=200, "OK", status=404, "Not Found")
+~~~
+if an event doesn't fit any cases, no value will return. To fix this:
+
+~~~
+eval fieldName=case(status=200, "OK", status=404, "Not Found", true(), "Something Else")
+~~~
+Can also add ranges with AND
+
+~~~
+eval fieldName=case(status=>=199 AND status<=201, "OK", status=404, "Not Found", true(), "Something Else")
+~~~
+each case can have AND statements and there can be as many cases and desired.
+
+eval can be used inside a transform eg. stats
+~~~
+| stats count(eval(status<300)) as "Success"
+count(eval(status>=400 AND status<500)) as "Client Error",
+count(eval(status>500)) as "Server Error"
+~~~
+Note the as is needed during the transform as well as the double-quotes
+
+## Search commmand
+~~~
+| search Count > 1
+~~~
+locate all results with Count value higher than 1
+
+## Where command
+~~~
+| where blah > blah
+| where blah!="IgnoreThis"
+~~~
+filter results
+
+~~~
+| where isnotnull(INeedThisValue)
+~~~
+ignore missing values
+
+~~~
+| where isnull(IDontNeedThisValue)
+~~~
+only missing values
+
+~~~
+| fillnull value="100"
+~~~
+fills nulls with 100, defaults to 0 without value field
+
+Wildcards
+~~~
+| where blah like "Hell_"
+~~~
+Matches one ( Hello, Hellp )
+~~~
+| where blah like "Hell%"
+~~~
+Matches many ( Hello, Hellotopia )
+
+## Fieldformat (Display-level alternative to eval)
+~~~
+fieldformat numerField = "$" + tostring(price_value,"commas")
+~~~
+Does not modify the underlying data, just modifies the displayed output (so sorting would still work)
+
 ## Chart commands
 ~~~
 | chart count over rowfieldname_name by columnfieldname
