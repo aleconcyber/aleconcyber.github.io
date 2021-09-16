@@ -112,6 +112,10 @@ fieldformat numerField = "$" + tostring(price_value,"commas")
 ~~~
 Does not modify the underlying data, just modifies the displayed output (so sorting would still work)
 
+## Stats command
+
+Use stats to see results of a calculation, or group events on a field value. Use transaction to see events correlated together, or grouped by start and end values.
+
 ## Transaction command
 ~~~
 | transaction src_ip
@@ -129,6 +133,21 @@ multiple fields used to form correlations, note that transaction has a max of 10
 ~~~
 extended transaction command with extra specificity
 startswith and endswith can search for terms, field values or evalutations
+
+## Field Extraction
+
+Works with RegEx or Delimiters
+Creates Knowledge Objects
+
+## Knowledge Objects
+Data Interpretation
+Classification
+Enrichment
+Normalization
+Search Time Mapping
+
+Typical naming convention
+Group-Type-Platform-Category-Time-Description
 
 ## Chart commands
 ~~~
