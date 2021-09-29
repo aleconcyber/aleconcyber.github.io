@@ -27,3 +27,17 @@ sudo dmidecode --type 17
 ~~~
 sudo timedatectl set-timezone Australia/Sydney
 ~~~
+
+##List file attributes
+~~~
+lsattr filename
+~~~
+
+A = atime record not updated
+S = synchronous changes to disk
+a = append write mode only
+i = immutable
+J = journaled, info written to ext3 journal before file
+t = tail-merge not allowed
+d = dump, no more candidate for dump process
+u = undeletion (data saved when removed)
