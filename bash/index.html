@@ -38,6 +38,7 @@
               {title: "Identify the Linux distribution", url: "#identify-the-linux-distribution" },
               {title: "ID the RAM", url: "#id-the-ram" },
               {title: "Set Timezone", url: "#set-timezone" },
+              {title: "List file attributes", url: "#list-file-attributes" },
           ]},
         ];
 
@@ -103,6 +104,17 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h2 id="set-timezone">Set Timezone<a class="headerlink" href="#set-timezone" title="Permanent link">#</a></h2>
 <pre><code>sudo timedatectl set-timezone Australia/Sydney
 </code></pre>
+<h2 id="list-file-attributes">List file attributes<a class="headerlink" href="#list-file-attributes" title="Permanent link">#</a></h2>
+<pre><code>lsattr filename
+</code></pre>
+<p>A = atime record not updated
+S = synchronous changes to disk
+a = append write mode only
+i = immutable
+J = journaled, info written to ext3 journal before file
+t = tail-merge not allowed
+d = dump, no more candidate for dump process
+u = undeletion (data saved when removed)</p>
 
   <br>
     
