@@ -41,3 +41,8 @@ J = journaled, info written to ext3 journal before file
 t = tail-merge not allowed
 d = dump, no more candidate for dump process
 u = undeletion (data saved when removed)
+
+##Show current working directory
+~~~
+cwd
+~~~
