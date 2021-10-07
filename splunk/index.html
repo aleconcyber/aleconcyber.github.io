@@ -39,6 +39,7 @@
               {title: "Eval commands", url: "#eval-commands" },
               {title: "Search commmand", url: "#search-commmand" },
               {title: "Where command", url: "#where-command" },
+              {title: "IN command", url: "#in-command" },
               {title: "Fieldformat (Display-level alternative to eval)", url: "#fieldformat-display-level-alternative-to-eval" },
               {title: "Stats command", url: "#stats-command" },
               {title: "Transaction command", url: "#transaction-command" },
@@ -166,6 +167,10 @@ count(eval(status&gt;500)) as &quot;Server Error&quot;
 <pre><code>| fillnull value=&quot;100&quot;
 </code></pre>
 <p>fills nulls with 100, defaults to 0 without value field</p>
+<h2 id="in-command">IN command<a class="headerlink" href="#in-command" title="Permanent link">#</a></h2>
+<pre><code>DomainName IN (google.com, microsoft.com)
+</code></pre>
+<p>will show only events where the field name DomainName matches one of the array</p>
 <p>Wildcards</p>
 <pre><code>| where blah like &quot;Hell_&quot;
 </code></pre>
