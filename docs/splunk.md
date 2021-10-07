@@ -96,6 +96,13 @@ Sort (decending) by Name
 ~~~
 fills nulls with 100, defaults to 0 without value field
 
+##IN command
+
+~~~
+DomainName IN (google.com, microsoft.com)
+~~~
+will show only events where the field name DomainName matches one of the array
+
 Wildcards
 ~~~
 | where blah like "Hell_"
