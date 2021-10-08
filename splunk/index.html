@@ -184,6 +184,9 @@ count(eval(status&gt;500)) as &quot;Server Error&quot;
 <p>Does not modify the underlying data, just modifies the displayed output (so sorting would still work)</p>
 <h2 id="stats-command">Stats command<a class="headerlink" href="#stats-command" title="Permanent link">#</a></h2>
 <p>Use stats to see results of a calculation, or group events on a field value. Use transaction to see events correlated together, or grouped by start and end values.</p>
+<pre><code>| stats list(FieldName1), values(FieldName2) by FieldName3
+</code></pre>
+<p>Creates a table where events are grouped by FieldName3 and list all of FieldName1 values available</p>
 <h2 id="transaction-command">Transaction command<a class="headerlink" href="#transaction-command" title="Permanent link">#</a></h2>
 <pre><code>| transaction src_ip
 </code></pre>
