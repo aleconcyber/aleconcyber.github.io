@@ -123,6 +123,11 @@ Does not modify the underlying data, just modifies the displayed output (so sort
 
 Use stats to see results of a calculation, or group events on a field value. Use transaction to see events correlated together, or grouped by start and end values.
 
+~~~
+| stats list(FieldName1), values(FieldName2) by FieldName3
+~~~
+Creates a table where events are grouped by FieldName3 and list all of FieldName1 values available
+
 ## Transaction command
 ~~~
 | transaction src_ip
