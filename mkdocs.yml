@@ -20,6 +20,8 @@ nav:
     - Home: index.md
     - Windows: 
         - WMI: wmi.md
+    - Mac:
+        - ZSH: zsh.md
     - Linux:
         - Bash: bash.md
         - APT Package Manager: apt.md
