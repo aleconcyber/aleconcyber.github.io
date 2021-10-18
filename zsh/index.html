@@ -90,6 +90,43 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <pre><code>dscl . -ls /Users
 </code></pre>
 <p>list all users on the system including hidden ones</p>
+<pre><code>dscl . list /Groups
+</code></pre>
+<p>list all groups</p>
+<pre><code>who
+</code></pre>
+<p>display logged in user(s)</p>
+<pre><code>/Users/username/.zsh_history
+</code></pre>
+<p>bash history file for username</p>
+<pre><code>touch -a -m -t [[CC]YY]MMDDhhmm[.SS]
+</code></pre>
+<p>set timestamp for file (timestomp) (access, modified)</p>
+<pre><code>crontab -u username -l
+</code></pre>
+<p>list cron jobs for username</p>
+<pre><code>alias ls='ls -l -t'
+</code></pre>
+<p>set an alias for a command </p>
+<pre><code>ls ~/Library/LaunchAgents
+ls /Library/LaunchAgents
+ls /Library/LaunchDaemons
+ls /System/Library/LaunchAgents
+ls /System/Library/LaunchDaemons
+</code></pre>
+<p>show all
+User Agents
+Global Agents/Daemons
+System Agents/Daemons</p>
+<pre><code>diskutil list
+</code></pre>
+<p>list disks</p>
+<pre><code>df -h
+</code></pre>
+<p>show free disk space</p>
+<pre><code>mount
+</code></pre>
+<p>show mount points</p>
 
   <br>
     
