@@ -39,6 +39,7 @@
               {title: "Push image to ECR", url: "#push-image-to-ecr" },
               {title: "Terminate and re-deploy Elastic Beanstalk application using saved config", url: "#terminate-and-re-deploy-elastic-beanstalk-application-using-saved-config" },
               {title: "Clear all saved images and containers locally", url: "#clear-all-saved-images-and-containers-locally" },
+              {title: "Stop containers", url: "#stop-containers" },
           ]},
         ];
 
@@ -111,6 +112,19 @@ docker rmi -f $(docker images -q)
 <pre><code>docker ps -a
 docker images
 </code></pre>
+<h2 id="stop-containers">Stop containers<a class="headerlink" href="#stop-containers" title="Permanent link">#</a></h2>
+<pre><code>docker sigterm
+</code></pre>
+<p>Terminate gracefully</p>
+<pre><code>docker sigkill
+</code></pre>
+<p>Terminate immediately</p>
+<pre><code>docker sigstop
+</code></pre>
+<p>Pause container</p>
+<pre><code>docker sigcont
+</code></pre>
+<p>Resume from pause</p>
 
   <br>
     
