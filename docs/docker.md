@@ -37,3 +37,24 @@ docker rmi -f $(docker images -q)
 docker ps -a
 docker images
 ~~~
+
+## Stop containers
+~~~
+docker sigterm
+~~~
+Terminate gracefully
+
+~~~
+docker sigkill
+~~~
+Terminate immediately
+
+~~~
+docker sigstop
+~~~
+Pause container
+
+~~~
+docker sigcont
+~~~
+Resume from pause
