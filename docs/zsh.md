@@ -1,6 +1,11 @@
 ## MacOS ZSH Helpful commands
 
 ~~~
+sw_vers
+~~~
+Show macOS version
+
+~~~
 chflags uchg /path/fileName
 ~~~
 lock a file
