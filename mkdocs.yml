@@ -26,6 +26,7 @@ nav:
         - Bash: bash.md
         - APT Package Manager: apt.md
         - Pacman Package Manager: pacman.md
+        - Raspberry Pi Commands: pi.md
     - Logging:
         - Splunk: splunk.md
     - Cloud: 
