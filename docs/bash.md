@@ -46,3 +46,9 @@ u = undeletion (data saved when removed)
 ~~~
 cwd
 ~~~
+
+##Benchmark mounted media (read & write on mmcblk0p1)
+~~~
+sync && dd if=/dev/zero of=/run/media/mmcblk0p1/testfile bs=1000M count=1 oflag=dsync && sync
+sync && dd if=/run/media/mmcblk0p1/testfile of=/dev/null bs=1000M count=1 iflag=dsync && sync
+~~~
