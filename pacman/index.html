@@ -96,10 +96,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <pre><code>sudo pacman -Ss &lt;keyword&gt;
 </code></pre>
 <h2 id="repair-keychain-fix-error-keyring-not-writeable">Repair keychain (fix error Keyring not writeable)<a class="headerlink" href="#repair-keychain-fix-error-keyring-not-writeable" title="Permanent link">#</a></h2>
-<pre><code>pacman-key --init
-pacman-key --populate
-pacman-key --refresh-keys
-pacman -Sy archlinux-keyring
+<pre><code>sudo pacman-key --init
+sudo pacman-key --populate
+sudo pacman-key --refresh-keys
+sudo pacman -Sy archlinux-keyring
 </code></pre>
 <h2 id="install-a-package">Install a package<a class="headerlink" href="#install-a-package" title="Permanent link">#</a></h2>
 <pre><code>sudo pacman -Syy &lt;keyword&gt;
