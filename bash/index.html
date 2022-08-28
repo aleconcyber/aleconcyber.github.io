@@ -40,6 +40,7 @@
               {title: "Set Timezone", url: "#set-timezone" },
               {title: "List file attributes", url: "#list-file-attributes" },
               {title: "Show current working directory", url: "#show-current-working-directory" },
+              {title: "Benchmark mounted media (read \u0026amp; write on mmcblk0p1)", url: "#benchmark-mounted-media-read-write-on-mmcblk0p1" },
           ]},
         ];
 
@@ -118,6 +119,10 @@ d = dump, no more candidate for dump process
 u = undeletion (data saved when removed)</p>
 <h2 id="show-current-working-directory">Show current working directory<a class="headerlink" href="#show-current-working-directory" title="Permanent link">#</a></h2>
 <pre><code>cwd
+</code></pre>
+<h2 id="benchmark-mounted-media-read-write-on-mmcblk0p1">Benchmark mounted media (read &amp; write on mmcblk0p1)<a class="headerlink" href="#benchmark-mounted-media-read-write-on-mmcblk0p1" title="Permanent link">#</a></h2>
+<pre><code>sync &amp;&amp; dd if=/dev/zero of=/run/media/mmcblk0p1/testfile bs=1000M count=1 oflag=dsync &amp;&amp; sync
+sync &amp;&amp; dd if=/run/media/mmcblk0p1/testfile of=/dev/null bs=1000M count=1 iflag=dsync &amp;&amp; sync
 </code></pre>
 
   <br>
