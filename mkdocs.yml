@@ -24,6 +24,7 @@ nav:
         - ZSH: zsh.md
     - Linux:
         - Bash: bash.md
+        - systemctl Service Manager: systemctl.md
         - APT Package Manager: apt.md
         - Pacman Package Manager: pacman.md
         - Raspberry Pi Commands: pi.md
