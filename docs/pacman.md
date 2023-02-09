@@ -15,6 +15,11 @@ sudo pacman -Syu <package-name>
 sudo pacman -Ss <keyword>
 ~~~
 
+## Repair PGP (fix is corrupted (invalid or corrupted package (PGP signature))
+~~~
+sudo pacman -S archlinux-keyring
+~~~
+
 ## Repair keychain (fix error Keyring not writeable)
 ~~~
 sudo pacman-key --init
