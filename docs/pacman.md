@@ -10,6 +10,11 @@ sudo pacman -Syu
 sudo pacman -Syu <package-name>
 ~~~
 
+## Check if a package is installed
+~~~
+pacman -Ss <packagename or string> | grep installed
+~~~
+
 ## Search for package
 ~~~
 sudo pacman -Ss <keyword>
